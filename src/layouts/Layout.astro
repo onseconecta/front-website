@@ -1,0 +1,93 @@
+---
+import { SEO_CONFIG } from "../config/seo";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <meta name="generator" content={Astro.generator} />
+    <title>{SEO_CONFIG.title}</title>
+    <meta name="description" content={SEO_CONFIG.description} />
+    <meta name="keywords" content={SEO_CONFIG.keywords.join(", ")} />
+    <meta name="creator" content={SEO_CONFIG.title} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content={SEO_CONFIG.title} />
+    <meta name="copyright" content={SEO_CONFIG.title} />
+
+    <meta name="application-name" content={SEO_CONFIG.title} />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content={SEO_CONFIG.title} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#23232c" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#23232c" />
+    <!-- <meta
+      name="msapplication-config"
+      content="/static/icons/browserconfig.xml"
+    /> -->
+
+    <!-- <link rel='apple-touch-icon' href='/static/touch-icon-iphone.png' />
+          <link rel='apple-touch-icon' sizes='152x152' href='/static/touch-icon-ipad.png' />
+          <link rel='apple-touch-icon' sizes='180x180' href='/static/touch-icon-iphone-retina.png' />
+          <link rel='apple-touch-icon' sizes='167x167' href='/static/touch-icon-ipad-retina.png' /> -->
+
+    <!-- <link rel='mask-icon' href='/static/safari-pinned-tab.svg' color='#23232c' /> -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/static/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/static/site.webmanifest" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+
+    <meta name="twitter:image:alt" content={SEO_CONFIG.title} />
+    <meta name="twitter:creator" content="@onseconecta" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={SEO_CONFIG.website} />
+    <meta property="twitter:title" content={SEO_CONFIG.title} />
+    <meta property="twitter:description" content={SEO_CONFIG.description} />
+    <meta property="twitter:image:alt" content={SEO_CONFIG.title} />
+    <meta
+      property="twitter:image"
+      content="https://lcpcaracas.org/static/logo-public.png"
+    />
+
+    <meta property="og:site_name" content={SEO_CONFIG.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SEO_CONFIG.website} />
+    <meta property="og:title" content={SEO_CONFIG.title} />
+    <meta property="og:description" content={SEO_CONFIG.description} />
+    <meta
+      property="og:image"
+      content="https://lcpcaracas.org/static/logo-public.png"
+    />
+  </head>
+
+  <body class="bg-onse-deep">
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
