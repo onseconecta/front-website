@@ -1,0 +1,277 @@
+---
+import logo from "@/assets/logos/logo-coral.png";
+---
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#inicio" class="nav-logo">
+      <img src={logo.src} alt="Onse Conecta" class="nav-logo-img" />
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-menu">
+      <li><a href="#inicio" class="nav-link">Inicio</a></li>
+      <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+      <li><a href="#registro" class="nav-link nav-cta">Registrarse</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  :root {
+    --coral: #fd725b;
+    --dark: #23232c;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+    transition: all 0.3s ease;
+  }
+
+  .navbar.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 100;
+  }
+
+  .nav-logo-img {
+    height: 40px;
+    width: auto;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+    margin: 0;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: color 0.2s ease;
+    padding: 8px 0;
+    display: block;
+  }
+
+  .nav-link:hover {
+    color: var(--coral);
+  }
+
+  .nav-cta {
+    background: linear-gradient(135deg, #fd725b 0%, #ff8a5b 100%);
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 114, 91, 0.3);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    z-index: 1003;
+  }
+
+  .hamburger {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--dark);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: var(--dark);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    top: 8px;
+  }
+
+  .nav-toggle.active .hamburger {
+    background: transparent;
+  }
+
+  .nav-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .nav-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      gap: 0;
+      padding: 100px 32px 32px;
+      box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      z-index: 1001;
+    }
+
+    .nav-menu.active {
+      right: 0;
+    }
+
+    .nav-menu li {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+
+    .nav-link {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--gray-50);
+    }
+
+    .nav-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 16px;
+      padding: 14px 20px;
+    }
+
+    .nav-cta:hover {
+      transform: none;
+      background: linear-gradient(135deg, #e4614c 0%, #f77a4e 100%);
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navToggle?.addEventListener("click", () => {
+    navToggle.classList.toggle("active");
+    navMenu?.classList.toggle("active");
+
+    // Prevent body scroll when menu is open
+    if (navMenu?.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Close menu when clicking on a link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navToggle?.classList.remove("active");
+      navMenu?.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+
+  // Add scrolled class to navbar
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 50) {
+      navbar?.classList.add("scrolled");
+    } else {
+      navbar?.classList.remove("scrolled");
+    }
+  });
+
+  // Smooth scroll with offset for fixed navbar
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const navHeight = 70;
+        const targetPosition = targetElement.offsetTop - navHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+</script>
