@@ -1,6 +1,6 @@
 ---
-import background from "@/assets/background.svg";
-import logo from "@/assets/logos/logo-coral.png";
+import background from "@/assets/background.svg"
+import logo from "@/assets/logos/logo-coral.png"
 ---
 
 <div id="container">
@@ -12,14 +12,365 @@ import logo from "@/assets/logos/logo-coral.png";
   />
 
   <main>
-    <section class="min-h-svh flex flex-col justify-center items-center p-6">
-      <img src={logo.src} alt="Astro Homepage" class="w-96" />
+    <!-- Hero Section -->
+    <section
+      class="min-h-svh flex flex-col justify-center items-center px-6 py-20 relative"
+    >
+      <div class="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+        <img
+          src={logo.src}
+          alt="Onse Conecta"
+          class="w-64 md:w-80 mx-auto mb-8 drop-shadow-2xl"
+        />
 
-      <div class="mt-6 mx-auto">
-        <h1 class="hidden">Onse Conecta</h1>
-        <span class="text-zinc-300">Proximamente</span>
+        <p
+          class="text-xl md:text-3xl text-zinc-300 max-w-3xl mx-auto leading-relaxed"
+        >
+          Donde el talento venezolano <span class="hero-gradient">se encuentra con quienes lo necesitan.</span> La
+          forma más rápida, segura y sencilla de resolver tus necesidades o
+          encontrar nuevos clientes.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <a href="#registro-clientes" class="btn-primary">
+            Necesito un profesional
+          </a>
+          <a href="#registro-profesionales" class="btn-secondary">
+            Soy profesional
+          </a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          class="w-6 h-6 text-zinc-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
       </div>
     </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div class="glass-card p-8 space-y-4 hover-lift">
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-coral-500 to-orange-400 rounded-2xl flex items-center justify-center mb-4"
+          >
+            <span class="text-3xl">✨</span>
+          </div>
+          <h2 class="text-3xl font-bold text-white">Misión</h2>
+          <p class="text-lg text-zinc-300 leading-relaxed">
+            Conectar de forma sencilla a personas con profesionales en
+            Venezuela, facilitando soluciones cotidianas a través de una
+            plataforma accesible y confiable.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 space-y-4 hover-lift">
+          <div
+            class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center mb-4"
+          >
+            <span class="text-3xl">🌍</span>
+          </div>
+          <h2 class="text-3xl font-bold text-white">Visión</h2>
+          <p class="text-lg text-zinc-300 leading-relaxed">
+            Ser la plataforma de referencia en Venezuela para encontrar y
+            ofrecer servicios, potenciando el talento local y mejorando la
+            calidad de vida de miles de personas mediante conexiones
+            significativas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center space-y-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
+          <span
+            class="hero-gradient"
+          >
+            Quiénes Somos
+          </span>
+        </h2>
+        <p class="text-xl md:text-2xl text-zinc-300 leading-relaxed">
+          En Venezuela, cada día trae un reto distinto. Por eso creamos <strong
+            class="text-white"
+            >Onse Conecta: para que resolver sea tan sencillo como pedir ayuda y
+            encontrarla cerca</strong
+          >. Creemos en el talento de nuestra gente y en el poder de la
+          confianza. Validamos, acompañamos y hacemos simple lo que debe ser
+          simple.
+        </p>
+      </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section
+      class="py-20 px-6 bg-gradient-to-b from-transparent via-coral-950/10 to-transparent"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            ¿Qué hacemos?
+          </h2>
+          <p class="text-xl text-zinc-300">
+            📲 Desde nuestra plataforma puedes:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <div class="feature-card">
+            <div class="feature-icon">📝</div>
+            <p class="text-lg text-zinc-200">
+              <strong>Publicar lo que necesitas</strong> (plomería, electricidad,
+              diseño, programación, mantenimiento ¡y mucho más!).
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <p class="text-lg text-zinc-200">
+              <strong>Recibir opciones</strong> de profesionales verificados en tu
+              zona.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <p class="text-lg text-zinc-200">
+              <strong>Revisar perfiles y reputación</strong> para elegir con confianza.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <p class="text-lg text-zinc-200">
+              <strong>Conectar de manera directa</strong> y resolver en minutos.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 text-center">
+          <p class="text-xl text-white mb-2">
+            👉 <strong>Si eres profesional:</strong>
+          </p>
+          <p class="text-lg text-zinc-300">
+            te damos visibilidad, clientes nuevos y un espacio confiable para
+            construir tu cartera.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+          💡 Beneficios
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Cliente Benefits -->
+          <div class="benefit-group">
+            <div class="flex items-center gap-3 mb-8">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-400 rounded-2xl flex items-center justify-center"
+              >
+                <span class="text-3xl">👤</span>
+              </div>
+              <h3 class="text-3xl font-bold text-white">Para clientes</h3>
+            </div>
+
+            <ul class="space-y-4">
+              <li class="benefit-item">
+                <svg
+                  class="benefit-check"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Encuentra rápido al profesional ideal cerca de ti.</span>
+              </li>
+              <li class="benefit-item">
+                <svg
+                  class="benefit-check"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Seguridad gracias a validación de identidad.</span>
+              </li>
+              <li class="benefit-item">
+                <svg
+                  class="benefit-check"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Proceso simple, todo desde tu computador o teléfono.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Professional Benefits -->
+          <div class="benefit-group">
+            <div class="flex items-center gap-3 mb-8">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-coral-500 to-orange-400 rounded-2xl flex items-center justify-center"
+              >
+                <span class="text-3xl">💼</span>
+              </div>
+              <h3 class="text-3xl font-bold text-white">Para profesionales</h3>
+            </div>
+
+            <ul class="space-y-4">
+              <li class="benefit-item">
+                <svg
+                  class="benefit-check"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Consigue clientes reales y constantes.</span>
+              </li>
+              <li class="benefit-item">
+                <svg
+                  class="benefit-check"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span
+                  >Crea tu reputación y destaca frente a la competencia.</span
+                >
+              </li>
+              <li class="benefit-item">
+                <svg
+                  class="benefit-check"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span
+                  >Primeras postulaciones gratis para impulsar tu negocio.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+          🔥 ¡Comienza ahora!
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- CTA Cliente -->
+          <div
+            id="registro-clientes"
+            class="cta-card bg-gradient-to-br from-green-600/20 to-emerald-600/20 border-green-500/30"
+          >
+            <h3 class="text-3xl font-bold text-white mb-4">
+              👉 Para clientes (usuarios)
+            </h3>
+            <p class="text-xl text-zinc-300 mb-8">
+              ¿Necesitas ayuda hoy? Encuentra al profesional perfecto en
+              minutos.
+            </p>
+            <a
+              href="#"
+              class="cta-button bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-600 hover:to-emerald-500"
+            >
+              Regístrate gratis
+            </a>
+          </div>
+
+          <!-- CTA Professional -->
+          <div
+            id="registro-profesionales"
+            class="cta-card bg-gradient-to-br from-coral-600/20 to-orange-600/20 border-coral-500/30"
+          >
+            <h3 class="text-3xl font-bold text-white mb-4">
+              👉 Para profesionales
+            </h3>
+            <p class="text-xl text-zinc-300 mb-8">
+              Haz crecer tu cartera de clientes y recibe oportunidades reales.
+            </p>
+            <a
+              href="#"
+              class="cta-button bg-gradient-to-r from-coral-500 to-orange-400 hover:from-coral-600 hover:to-orange-500"
+            >
+              Regístrate gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-zinc-800">
+      <div class="max-w-4xl mx-auto text-center space-y-4">
+        <img
+          src={logo.src}
+          alt="Onse Conecta"
+          class="w-32 mx-auto opacity-75"
+        />
+        <p class="text-zinc-400">
+          © 2025 Onse Conecta. Conectando talento venezolano con quienes lo
+          necesitan.
+        </p>
+      </div>
+    </footer>
   </main>
 </div>
 
@@ -37,56 +388,209 @@ import logo from "@/assets/logos/logo-coral.png";
   #container {
     font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
       Arial, sans-serif;
-    height: 100%;
+    min-height: 100vh;
   }
 
   main {
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
   }
 
-  h1 {
-    font-size: 22px;
-    margin-top: 0.25em;
+  /* Hero Gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
+    font-weight: 700;
+    text-shadow: none;
   }
 
-  .box {
-    padding: 16px;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 16px;
-    border: 1px solid white;
-  }
-
-  #news {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    max-width: 300px;
-    text-decoration: none;
-    transition: background 0.2s;
-    backdrop-filter: blur(50px);
-  }
-
-  #news:hover {
-    background: rgba(255, 255, 255, 0.55);
-  }
-
-  @media screen and (max-height: 368px) {
-    #news {
-      display: none;
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% center;
     }
+    50% {
+      background-position: 100% center;
+    }
+  }
+
+  /* Glass Card Effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #f97316, #fb923c);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.5);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.6);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Feature Cards */
+  .feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(249, 115, 22, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  /* Benefits */
+  .benefit-group {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 32px;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    color: #d4d4d8;
+    font-size: 1.125rem;
+  }
+
+  .benefit-check {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: #10b981;
+    margin-top: 2px;
+  }
+
+  /* CTA Cards */
+  .cta-card {
+    border: 2px solid;
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .cta-card:hover {
+    transform: translateY(-4px);
+    border-width: 3px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 18px 36px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Hover Lift Effect */
+  .hover-lift {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 
   @media screen and (max-width: 768px) {
-    #container {
-      display: flex;
-      flex-direction: column;
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      text-align: center;
     }
 
-    #hero {
-      display: block;
-      padding-top: 10%;
+    .cta-card {
+      padding: 32px 24px;
+    }
+
+    .benefit-group {
+      padding: 24px;
     }
   }
 </style>
