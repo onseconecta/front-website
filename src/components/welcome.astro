@@ -117,8 +117,8 @@ import sebasImg from "@/assets/team/sebas.png"
           <div class="feature-card">
             <div class="feature-emoji">📝</div>
             <p class="feature-text">
-              <strong>Publicar lo que necesitas</strong> (plomería, electricidad,
-              diseño, programación, mantenimiento ¡y mucho más!).
+              <strong>Publicar lo que necesitas</strong> (diseñador gráfico, marketing,
+              programación ¡y mucho más!).
             </p>
           </div>
 
@@ -147,8 +147,15 @@ import sebasImg from "@/assets/team/sebas.png"
 
         <div class="professional-callout">
           <p class="callout-text">
-            👉 <strong>Si eres profesional:</strong> te damos visibilidad, clientes
-            nuevos y un espacio confiable para construir tu cartera.
+            👉 <strong>Si eres profesional:</strong> te damos visibilidad, <span
+              class="tooltip-container"
+            >
+              <span class="tooltip-word">leads</span>
+              <span class="tooltip-text"
+                >Un Lead es un cliente potencial con una necesidad de servicio
+                específica, listo para recibir tu propuesta</span
+              >
+            </span> nuevos y un espacio confiable para construir tu cartera.
           </p>
         </div>
       </div>
@@ -178,14 +185,7 @@ import sebasImg from "@/assets/team/sebas.png"
                 <svg class="check-icon" viewBox="0 0 24 24">
                   <path d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span>Seguridad gracias a validación de identidad.</span>
-              </li>
-              <li class="benefit-item">
-                <svg class="check-icon" viewBox="0 0 24 24">
-                  <path d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Proceso simple, todo desde tu computador o teléfono.</span
-                >
+                <span>Proceso simple, todo desde tu computador</span>
               </li>
             </ul>
           </div>
@@ -202,7 +202,7 @@ import sebasImg from "@/assets/team/sebas.png"
                 <svg class="check-icon" viewBox="0 0 24 24">
                   <path d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span>Consigue clientes reales y constantes.</span>
+                <span>Postúlate para conseguir clientes</span>
               </li>
               <li class="benefit-item">
                 <svg class="check-icon" viewBox="0 0 24 24">
@@ -247,9 +247,7 @@ import sebasImg from "@/assets/team/sebas.png"
               <span class="hidden sm:block">
                 Regístrate gratis y publica tu necesidad
               </span>
-              <span class="block sm:hidden">
-                Regístrate gratis
-              </span>
+              <span class="block sm:hidden"> Regístrate gratis </span>
             </a>
           </div>
 
@@ -259,13 +257,15 @@ import sebasImg from "@/assets/team/sebas.png"
             <p class="cta-text">
               Haz crecer tu cartera de clientes y recibe oportunidades reales.
             </p>
-            <a href="https://forms.gle/8rFjEmk9Ea6pvY168" class="btn btn-pro" target="_blank">
+            <a
+              href="https://forms.gle/8rFjEmk9Ea6pvY168"
+              class="btn btn-pro"
+              target="_blank"
+            >
               <span class="hidden sm:block">
                 Regístrate gratis y comienza a postularte
               </span>
-              <span class="block sm:hidden">
-                Regístrate gratis
-              </span>
+              <span class="block sm:hidden"> Regístrate gratis </span>
             </a>
           </div>
         </div>
@@ -611,6 +611,60 @@ import sebasImg from "@/assets/team/sebas.png"
     color: white;
   }
 
+  /* Custom Tooltip Styles */
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip-word {
+    text-decoration: underline dotted;
+    text-decoration-color: var(--coral);
+    text-underline-offset: 3px;
+    cursor: help;
+    font-weight: 600;
+    color: var(--coral);
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background: white;
+    color: var(--dark);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    width: 280px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border: 2px solid var(--coral);
+  }
+
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--coral) transparent transparent transparent;
+  }
+
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
   /* Benefits Grid */
   .benefits-grid {
     display: grid;
@@ -906,6 +960,12 @@ import sebasImg from "@/assets/team/sebas.png"
 
     .callout-text {
       font-size: 1rem;
+    }
+
+    .tooltip-text {
+      width: 240px;
+      font-size: 0.8125rem;
+      padding: 10px 14px;
     }
 
     .btn {
